@@ -1,6 +1,6 @@
 import ProgressBar from "./ProgressBar";
 
-const SkillCard = ({ title, score, color = "green" }) => {
+const Card = ({ title, score, color = "green" }) => {
     const colorClass = color === "green" ? "bg-green-400" : "bg-blue-400";
 
     return (
@@ -14,4 +14,4 @@ const SkillCard = ({ title, score, color = "green" }) => {
     );
 };
 
-export default SkillCard;
+export default Card;
