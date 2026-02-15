@@ -17,9 +17,7 @@ const Navbar = () => {
         <Link to="/" className="text-white font-bold hover:text-green-300 transition-colors">
           Home
         </Link>
-        <Link to="/about" className="text-white font-bold hover:text-green-300 transition-colors">
-          About
-        </Link>
+       
         
         {/* Login Button */}
         <motion.button
