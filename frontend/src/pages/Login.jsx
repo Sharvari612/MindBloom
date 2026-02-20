@@ -75,7 +75,7 @@ export default function Login() {
         return;
       }
 
-      navigate("/games");
+      navigate("/add-child");
     } catch (err) {
       console.error(err);
       setError("Google login failed.");
