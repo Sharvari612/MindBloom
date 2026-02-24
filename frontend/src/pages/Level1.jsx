@@ -8,19 +8,9 @@ export default function Level1({ childId, onLevelComplete }) {
 
   const challenges = [
     {
-      id: 1,
-      name: "Mirror Match",
-      component: <MirrorMatch onComplete={() => next()} />
-    },
-    {
       id: 2,
       name: "Sound Safari",
-      component: <SoundSafari onComplete={() => next()} />
-    },
-    {
-      id: 3,
-      name: "Memory Quest",
-      component: <MemoryQuest onComplete={() => next()} />
+      component: <SoundSafari onComplete={() => next()}/>
     }
   ];
 

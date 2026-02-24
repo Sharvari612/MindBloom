@@ -1,12 +1,19 @@
 import { useState } from "react";
 import "../styles/GameLevelMap.css";
+// ADD THIS at top of GameLevelMap.jsx
+import { useNavigate } from "react-router-dom";
 
 export default function GameLevelMap() {
+  const navigate = useNavigate();
   const [currentLevel, setCurrentLevel] = useState(1);
   const [completedLevels, setCompletedLevels] = useState([]);
   const [hearts, setHearts] = useState(5);
   const [gems, setGems] = useState(0);
-
+  const startLevel1 = () => {
+    // ✅ Child ID already stored in localStorage from AddChild
+    console.log('🚀 Starting Level 1 - childId:', localStorage.getItem('current_child_id'));
+    navigate('/Level1');  // ✅ SoundSafari
+  };
   // Level configuration
   const levels = [
     { id: 1, stars: 0, locked: false, type: "normal" },
@@ -19,11 +26,18 @@ export default function GameLevelMap() {
     { id: 8, stars: 0, locked: true, type: "treasure" },
   ];
 
-  const handleLevelClick = (level) => {
+   const handleLevelClick = (level) => {
     if (!level.locked) {
       console.log(`Starting level ${level.id}`);
-      // Navigate to game level
-      window.location.href = `/Level1`;
+      
+      // ✅ PASS CHILD ID (from AddChild localStorage)
+      const childId = localStorage.getItem('current_child_id');
+      console.log('🎯 Level', level.id, 'childId:', childId);
+      
+      localStorage.setItem('selected_level', level.id.toString());
+      
+      // Navigate to YOUR Level1 (SoundSafari)
+      window.location.href = `/Level1`;  // ✅ Your existing navigation
     }
   };
 
