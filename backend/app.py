@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from datetime import datetime
 import uuid
 
+
 # Load .env
 load_dotenv()
 
@@ -120,6 +121,8 @@ def get_children(parent_id):
 @app.route("/")
 def home():
     return jsonify({"status": "Backend running"})
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
