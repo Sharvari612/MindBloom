@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 // Child Pages
 import Landing from "./pages/Landing";
 import GameSelect from "./pages/GameSelect";
-import GamePlay from "./pages/GamePlay";
 import GameResult from "./pages/GameResult";
 import Login from "./pages/Login";
 import GameLevelMap from "./pages/Levels"
@@ -29,7 +28,7 @@ function App() {
 
   // ✅ Fetch from Flask
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/get-scores/c001")
+    fetch("http://localhost:8000/get-scores/c001")
       .then((res) => res.json())
       .then((data) => {
         setScores(data);
@@ -51,7 +50,6 @@ function App() {
       {/* Child Routes */}
       <Route path="/" element={<Landing />} />
       <Route path="/games" element={<GameSelect />} />
-      <Route path="/play" element={<GamePlay />} />
       <Route path="/results" element={<GameResult />} />
       <Route path="/levels" element={<GameLevelMap />} />
       <Route path="/level1" element={<Level1 />} />

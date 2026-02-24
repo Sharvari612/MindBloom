@@ -46,7 +46,7 @@ export default function AddChild() {
 
       setLoadingChildren(true);
 
-      const url = `http://localhost:5000/api/get-children/${session.parentId}`;
+      const url = `http://localhost:8000/api/get-children/${session.parentId}`;
       console.log("🌐 Request URL:", url);
 
       const res = await fetch(url);
@@ -100,7 +100,7 @@ export default function AddChild() {
     console.log("📤 Sending add-child payload:", payload);
 
     try {
-      const response = await fetch("http://localhost:5000/api/add-child", {
+      const response = await fetch("http://localhost:8000/api/add-child", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

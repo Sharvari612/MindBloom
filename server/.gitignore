@@ -1,0 +1,10 @@
+.env
+node_modules
+dist
+build
+*.log   
+yarn.lock   
+.DS_Store
+.env.local
+.env.development
+.env.test   
