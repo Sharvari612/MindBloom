@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, googleProvider } from "../firebase/config";
+import { saveSession } from "../services/session";
 import {
   signInWithEmailAndPassword,
   signInWithPopup
@@ -46,7 +47,7 @@ export default function Login() {
         return;
       }
 
-      navigate("/add-child");
+      navigate("/games");
     } catch (err) {
       console.error(err);
       setError("Invalid email or password.");
@@ -74,6 +75,19 @@ export default function Login() {
         setError("No account found. Please signup first.");
         return;
       }
+
+      saveSession({
+        uid: user.uid,
+        email: user.email,
+        provider: "google",
+        parentId: data.id,
+      });
+      console.log("✅ Session saved:", {
+        uid: user.uid,
+        email: user.email,
+        provider: "google",
+        parentId: data.id,
+      });
 
       navigate("/add-child");
     } catch (err) {
