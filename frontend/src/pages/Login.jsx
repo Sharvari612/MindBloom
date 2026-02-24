@@ -46,20 +46,8 @@ export default function Login() {
         setError("User not found in database.");
         return;
       }
-      // After verifying user exists in Supabase
-      saveSession({
-        uid: user.uid,
-        email: user.email,
-        provider: "email",
-        parentId: data.id, // Supabase parent id
-      });
-      console.log("✅ Session saved:", {
-        uid: user.uid,
-        email: user.email,
-        provider: "email",
-        parentId: data.id,
-      });
-      navigate("/add-child");
+
+      navigate("/games");
     } catch (err) {
       console.error(err);
       setError("Invalid email or password.");
