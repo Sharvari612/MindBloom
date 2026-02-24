@@ -177,9 +177,12 @@ export default function AddChild() {
 
                   <button
                     className="start-playing-btn"
-                    onClick={() =>
-                      navigate(`/Story-War`)
-                    }
+                    onClick={() => {
+                      // ✅ STORE CHILD ID for Levels → SoundSafari flow
+                      localStorage.setItem('current_child_id', child.id);
+                      console.log('🎯 Stored childId:', child.id, 'for', child.name);
+                      navigate('/levels');  // ✅ Go to Levels FIRST
+                    }}
                   >
                     Start Playing ▶
                   </button>

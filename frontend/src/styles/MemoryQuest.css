@@ -1,0 +1,35 @@
+/* MemoryQuest.css */
+
+.memory-quest {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.memory-card {
+  background: #f5f5f5;
+  border-radius: 16px;
+  font-size: 2rem;
+  padding: 24px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+
+.memory-card:hover {
+  transform: scale(1.05);
+}
+
+.memory-card.matched {
+  background: #d1fae5;
+}
+
+.card-face {
+  display: block;
+}

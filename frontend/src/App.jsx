@@ -10,17 +10,16 @@ import Login from "./pages/Login";
 import GameLevelMap from "./pages/Levels"
 import NeutralStory from "./pages/StoryWar";
 import Level1 from "./pages/Level1"
+import AddChild from "./pages/AddChild";
 
 // Parent Pages
 import ParentLogin from "./pages/ParentLogin";
 import ParentDashboard from "./pages/ParentDashboard";
 import ChildProgress from "./pages/ChildProgress";
 import ParentChatbot from "./pages/ParentChatbot";
-import AddChild from "./pages/AddChild";
 
 import Signup from "./pages/Signup";
 import DyslexiaScreening from "./pages/DyslexiaScreening";
-import AddChild from "./pages/AddChildPage";
 
 function App() {
   // ✅ State
