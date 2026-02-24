@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import GameLevelMap from "./pages/Levels"
 import NeutralStory from "./pages/StoryWar";
 import Level1 from "./pages/Level1"
+import AddChild from "./pages/AddChild";
 
 // Parent Pages
 import ParentLogin from "./pages/ParentLogin";
